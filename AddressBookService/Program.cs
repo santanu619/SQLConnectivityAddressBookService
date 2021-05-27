@@ -19,9 +19,10 @@ namespace EmployeePayrollService
             contact.PhoneNumber = "6294476694";
             contact.Email = "mohapatra.santanu123@gmail.com";
             contact.Type = "Family";
-            if (repo.AddContact(contact))
-                Console.WriteLine("Records added successfully");
-            repo.GetAllData();
+            //if (repo.AddContact(contact))
+            // Console.WriteLine("Records added successfully");
+            //repo.GetAllData();
+            repo.RemoveContact("Anshumaan");
             Console.ReadKey();
         }
 

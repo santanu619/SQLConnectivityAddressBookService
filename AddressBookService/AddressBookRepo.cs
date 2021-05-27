@@ -1,10 +1,8 @@
-﻿using AddressBookService;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace Address_Book
+namespace AddressBookService
 {
     public class ContactRepo
     {
@@ -94,7 +92,55 @@ namespace Address_Book
             }
             return false;
         }
+        public void UpdateContact(Contact contact, string firstName)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                using (connection)
+                {
+                    string query = $"UPDATE contacts SET FirstName = '{contact.FirstName}', LastName = '{contact.LastName}', Address = '{contact.Address}', City = '{contact.City}', State = '{contact.State}', Zip = '{contact.Zip}', PhoneNumber = '{contact.PhoneNumber}', Email = '{contact.Email}',Type='{contact.Type}' WHERE FirstName = '{firstName}'";
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    connection.Open();
+                    var result = cmd.ExecuteNonQuery();
+                    connection.Close();
+                    if (result != 0)
+                    {
+                        Console.WriteLine("Data Updated in the AddressBook.");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 
-        
+        public void RemoveContact(String firstName)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                using (connection)
+                {
+                    string query = $"delete from contacts where FirstName = '{firstName}'";
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    connection.Open();
+                    var result = cmd.ExecuteNonQuery();
+                    connection.Close();
+                    if (result != 0)
+                    {
+                        Console.WriteLine("Contact Deleted from AddressBook.");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+
+        }
+
     }
 }

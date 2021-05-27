@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mdFGJFVnjr2lo2RO3ygZNocUCmdrlzpiP6QXUGYAJEfHVVBF8XvVnDVX4a4+qQF8AIlA0QTsRKzfkX1ISZzdDw==",
+  "dgSpecHash": "uSrdrEtbDXbv1n+9Q8twFagPrInofQTnkfnfOrOGkq/UYhfkE0kgPZijfcQHVY6ni2s2zvVHX81B+q4Qi0iF3w==",
   "success": true,
   "projectFilePath": "C:\\Users\\SANTANU\\source\\repos\\AddressBookService\\AddressBookService\\AddressBookService.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\SANTANU\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\SANTANU\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
   "logs": []
 }
